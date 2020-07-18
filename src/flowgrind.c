@@ -1347,7 +1347,7 @@ has_more_reports:
 				int tcpi_unacked;
 				int tcpi_sacked;
 				int tcpi_lost;
-				int tcpi_retrans;
+				int tcpi_total_retrans;
 				int tcpi_retransmits;
 				int tcpi_fackets;
 				int tcpi_reordering;
@@ -1410,7 +1410,7 @@ has_more_reports:
 					"tcpi_sacked", &tcpi_sacked,
 					"tcpi_lost", &tcpi_lost,
 
-					"tcpi_retrans", &tcpi_retrans,
+					"tcpi_total_retrans", &tcpi_total_retrans,
 					"tcpi_retransmits", &tcpi_retransmits,
 					"tcpi_fackets", &tcpi_fackets,
 					"tcpi_reordering", &tcpi_reordering,
@@ -1443,7 +1443,7 @@ has_more_reports:
 				report.tcp_info.tcpi_unacked = tcpi_unacked;
 				report.tcp_info.tcpi_sacked = tcpi_sacked;
 				report.tcp_info.tcpi_lost = tcpi_lost;
-				report.tcp_info.tcpi_retrans = tcpi_retrans;
+				report.tcp_info.tcpi_total_retrans = tcpi_total_retrans;
 				report.tcp_info.tcpi_retransmits = tcpi_retransmits;
 				report.tcp_info.tcpi_fackets = tcpi_fackets;
 				report.tcp_info.tcpi_reordering = tcpi_reordering;
@@ -1865,7 +1865,7 @@ static void print_interval_report(unsigned short flow_id, enum endpoint_t e,
 	changed |= print_column(&header1, &header2, &data, COL_TCP_LOST,
 				report->tcp_info.tcpi_lost, 0);
 	changed |= print_column(&header1, &header2, &data, COL_TCP_RETR,
-				report->tcp_info.tcpi_retrans, 0);
+				report->tcp_info.tcpi_total_retrans, 0);
 	changed |= print_column(&header1, &header2, &data, COL_TCP_TRET,
 				report->tcp_info.tcpi_retransmits, 0);
 	changed |= print_column(&header1, &header2, &data, COL_TCP_FACK,

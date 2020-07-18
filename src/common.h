@@ -270,7 +270,7 @@ struct fg_tcp_info {
 	int tcpi_unacked;
 	int tcpi_sacked;
 	int tcpi_lost;
-	int tcpi_retrans;
+	int tcpi_total_retrans;
 	int tcpi_retransmits;
 	int tcpi_fackets;
 	int tcpi_reordering;

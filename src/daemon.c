@@ -671,7 +671,7 @@ int get_tcp_info(struct flow *flow, struct fg_tcp_info *info)
 	CPY_INFO_MEMBER(tcpi_unacked);
 	CPY_INFO_MEMBER(tcpi_sacked);
 	CPY_INFO_MEMBER(tcpi_lost);
-	CPY_INFO_MEMBER(tcpi_retrans);
+	CPY_INFO_MEMBER(tcpi_total_retrans);
 	CPY_INFO_MEMBER(tcpi_retransmits);
 	CPY_INFO_MEMBER(tcpi_fackets);
 	CPY_INFO_MEMBER(tcpi_reordering);
